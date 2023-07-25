@@ -89,6 +89,10 @@ function createCard(countryName, flagImage, capital, region, countryCode, popula
     img.style.maxHeight = "150px";
     img.style.objectFit = "cover";
 
+    // Card Text
+    const cardTextDiv = document.createElement("div");
+    cardTextDiv.classList.add("card-text");
+    
     const capitalPara = createParagraph("Capital:", capital);
     const regionPara = createParagraph("Region:", region);
     const countryCodePara = createParagraph("Country Code:", countryCode);
@@ -105,10 +109,11 @@ function createCard(countryName, flagImage, capital, region, countryCode, popula
     });
 
     cardBody.appendChild(img);
-    cardBody.appendChild(capitalPara);
-    cardBody.appendChild(populationPara);
-    cardBody.appendChild(regionPara);
-    cardBody.appendChild(countryCodePara);
+    cardBody.appendChild(cardTextDiv);
+    cardTextDiv.appendChild(capitalPara);
+    cardTextDiv.appendChild(populationPara);
+    cardTextDiv.appendChild(regionPara);
+    cardTextDiv.appendChild(countryCodePara);
 
     cardBody.appendChild(weatherButton);
 
